@@ -24,7 +24,15 @@ def scourge(before, after):
             header = ['first', 'last', 'house']
             writer = csv.DictWriter(after, fieldname=header)
             writer.writeHeader()
-            
+
+            # Process each row in input file
+            for row in header:
+                # Split the 'name' field into last name and first name
+                lname, fname = row['name'].strip().split(', ')
+                house = row['house']
+                # Write the processed data to the output file
+                writer.writerow({'first': fname, 'last': lname, 'house': house})
+
     except:
         ...
 
