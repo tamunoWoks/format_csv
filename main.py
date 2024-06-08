@@ -22,8 +22,8 @@ def scourge(before, after):
         with open(argv[1]) as before, open(argv[2], 'w', newline='') as after:
             reader = csv.DictReader(before)
             header = ['first', 'last', 'house']
-            writer = csv.DictWriter(after, fieldname=header)
-            writer.writeHeader()
+            writer = csv.DictWriter(after, fieldnames=header)
+            writer.writeheader()
 
             # Process each row in input file
             for row in header:
