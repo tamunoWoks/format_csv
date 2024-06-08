@@ -13,7 +13,7 @@ def main():
         if not argv[1].endswith('.csv'):
             exit('Not a CSV file')
         else:
-            ...
+            scourge(argv[1], argv[2])
 
 
 def scourge(before, after):
@@ -33,8 +33,9 @@ def scourge(before, after):
                 # Write the processed data to the output file
                 writer.writerow({'first': fname, 'last': lname, 'house': house})
 
-    except:
-        ...
+    except FileNotFoundError:
+        #Handle file not found error
+        exit(f'Could not read {before}')
 
 
 
