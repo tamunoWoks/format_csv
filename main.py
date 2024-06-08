@@ -16,6 +16,18 @@ def main():
             ...
 
 
+def scourge(before, after):
+    try:
+        #Open the input CSV file for reading and output CSV file for writing
+        with open(argv[1]) as before, open(argv[2], 'w', newline='') as after:
+            reader = csv.DictReader(before)
+            header = ['first', 'last', 'house']
+            writer = csv.DictWriter(after, fieldname=header)
+            writer.writeHeader()
+            
+    except:
+        ...
+
 
 
 if __name__ == '__main__':
